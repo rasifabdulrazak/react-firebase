@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import firebase from './firebase/config'
+import 'firebase/firestore';
+import 'firebase/storage'; 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <button onClick={()=>{
+        firebase.firestore().collection('products').doc('Lol9aZ0Fh5f0lTXG1O5Y').set({
+          name:'update'
+        })
+     }}>Click</button>
     </div>
   );
 }
